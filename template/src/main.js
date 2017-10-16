@@ -3,7 +3,7 @@
 // 1. use next line to activate CUSTOM STYLE (./src/themes)
 // require(`./themes/app.${__THEME}.styl`)
 // 2. or, use next line to activate DEFAULT QUASAR STYLE
-require(`quasar/dist/quasar.${__THEME}.css`)
+require(`quasar/dist/quasar.${__THEME}.css`);
 // ==============================
 
 // Uncomment the following lines if you need IE11/Edge support
@@ -14,28 +14,28 @@ require(`quasar/dist/quasar.${__THEME}.css`)
 const OfflinePlugin = require('offline-plugin/runtime');
 
 OfflinePlugin.install({
-  onInstalled: function() {
+  onInstalled: () => {
     console.log('OfflineReady');
   },
 
-  onUpdating: function() {
+  onUpdating: () => {
 
   },
 
-  onUpdateReady: function() {
+  onUpdateReady: () => {
     OfflinePlugin.applyUpdate();
   },
-  onUpdated: function() {
+  onUpdated: () => {
     window.location.reload();
   }
 });
 
-import Vue from 'vue'
-import Quasar from 'quasar'
-import router from './router'
+import Vue from 'vue';
+import Quasar from 'quasar';
+import router from './router';
 
-Vue.config.productionTip = false
-Vue.use(Quasar) // Install Quasar Framework
+Vue.config.productionTip = false;
+Vue.use(Quasar); // Install Quasar Framework
 
 if (__THEME === 'mat') {
   // require('quasar-extras/roboto-font')
@@ -50,4 +50,4 @@ new Vue({
   el: '#q-app',
   router,
   render: h => h(require('./App').default)
-})
+});
